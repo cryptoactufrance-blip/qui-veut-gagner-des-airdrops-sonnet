@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui veut gagner des Airdrops</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Rideau d'animation -->
+    <div id="curtain"></div>
 
+    <!-- ÉTAT 1 : ACCUEIL -->
+    <section id="accueil" class="screen active">
+        <div class="content">
+            <h1>Qui veut gagner des Airdrops</h1>
+            <img src="https://via.placeholder.com/300x300/9333EA/FFFFFF?text=Mage+Animateur" alt="Mage Animateur" class="mage-image">
+            <button class="btn-primary" onclick="startQuiz()">Commencer le test</button>
+        </div>
+    </section>
+
+    <!-- ÉTAT 2 : QUESTION 1 -->
+    <section id="question1" class="screen">
+        <div class="content">
+            <img src="https://via.placeholder.com/200x200/9333EA/FFFFFF?text=Mage+Q1" alt="Mage Question 1" class="mage-image-small">
+            <h2>Question 1/4</h2>
+            <p class="question-text">Quel est ton niveau en DeFi ?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q1" value="A">
+                    <span>A: Débutant</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="B">
+                    <span>B: Intermédiaire</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="C">
+                    <span>C: Pro</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="D">
+                    <span>D: Expert</span>
+                </label>
+            </div>
+            <button class="btn-primary" onclick="nextQuestion(1)">Suivant</button>
+        </div>
+    </section>
+
+    <!-- ÉTAT 3 : QUESTION 2 -->
+    <section id="question2" class="screen">
+        <div class="content">
+            <img src="https://via.placeholder.com/200x200/9333EA/FFFFFF?text=Mage+Q2" alt="Mage Question 2" class="mage-image-small">
+            <h2>Question 2/4</h2>
+            <p class="question-text">Combien de temps peux-tu consacrer aux airdrops ?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q2" value="A">
+                    <span>A: 1–3 h/semaine</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="B">
+                    <span>B: 1–2 h/jour</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="C">
+                    <span>C: 3–4 h/jour</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="D">
+                    <span>D: Temps plein</span>
+                </label>
+            </div>
+            <button class="btn-primary" onclick="nextQuestion(2)">Suivant</button>
+        </div>
+    </section>
+
+    <!-- ÉTAT 4 : QUESTION 3 (Choix multiple) -->
+    <section id="question3" class="screen">
+        <div class="content">
+            <img src="https://via.placeholder.com/200x200/9333EA/FFFFFF?text=Mage+Q3" alt="Mage Question 3" class="mage-image-small">
+            <h2>Question 3/4</h2>
+            <p class="question-text">Quelles sont tes compétences ? (Plusieurs choix possibles)</p>
+            <div class="options">
+                <label class="option">
+                    <input type="checkbox" name="q3" value="A">
+                    <span>A: Dev / Vibecoder</span>
+                </label>
+                <label class="option">
+                    <input type="checkbox" name="q3" value="B">
+                    <span>B: Trader</span>
+                </label>
+                <label class="option">
+                    <input type="checkbox" name="q3" value="C">
+                    <span>C: Marketing / Contenu</span>
+                </label>
+                <label class="option">
+                    <input type="checkbox" name="q3" value="D">
+                    <span>D: La réponse D</span>
+                </label>
+            </div>
+            <button class="btn-primary" onclick="nextQuestion(3)">Suivant</button>
+        </div>
+    </section>
+
+    <!-- ÉTAT 5 : QUESTION 4 -->
+    <section id="question4" class="screen">
+        <div class="content">
+            <img src="https://via.placeholder.com/200x200/9333EA/FFFFFF?text=Mage+Q4" alt="Mage Question 4" class="mage-image-small">
+            <h2>Question 4/4</h2>
+            <p class="question-text">Quel capital peux-tu investir ?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q4" value="A">
+                    <span>A: 0 $</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="B">
+                    <span>B: 100–2 500 $</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="C">
+                    <span>C: 2 500–10 000 $</span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="D">
+                    <span>D: 10 000+ $</span>
+                </label>
+            </div>
+            <button class="btn-primary" onclick="nextQuestion(4)">Suivant</button>
+        </div>
+    </section>
+
+    <!-- ÉTAT 6 : OPT-IN NEWSLETTER -->
+    <section id="optin" class="screen">
+        <div class="content">
+            <img src="https://via.placeholder.com/200x200/9333EA/FFFFFF?text=Mage+Optin" alt="Mage Optin" class="mage-image-small">
+            <h2>Reçois les meilleurs airdrops chaque semaine</h2>
+            <p>Inscris-toi à ma newsletter pour ne rien rater !</p>
+            
+            <!-- Formulaire Substack (tu remplaceras l'URL par la tienne) -->
+            <iframe src="https://substack.com/embed-form" 
+                    width="100%" 
+                    height="200" 
+                    style="border:1px solid #EEE; background:white; max-width:480px; margin:20px auto;" 
+                    frameborder="0" 
+                    scrolling="no">
+            </iframe>
+            
+            <button class="btn-primary" onclick="goToResults()">S'inscrire et voir mes résultats</button>
+            <button class="btn-secondary" onclick="goToResults()">Passer et voir les résultats</button>
+        </div>
+    </section>
+
+    <!-- ÉTAT 7 : RÉSULTATS -->
+    <section id="results" class="screen">
+        <div class="content">
+            <img src="https://via.placeholder.com/200x200/9333EA/FFFFFF?text=Mage+Resultat" alt="Mage Résultat" class="mage-image-small">
+            <h2>Tes Airdrops recommandés</h2>
+            <div id="results-container">
+                <!-- Les résultats seront générés par JavaScript -->
+            </div>
+            <button class="btn-primary" onclick="restartQuiz()">Recommencer le test</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
