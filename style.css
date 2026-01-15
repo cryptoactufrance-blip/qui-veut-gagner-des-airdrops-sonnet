@@ -74,21 +74,25 @@ h2 {
 
 /* ===== IMAGES DU MAGE ===== */
 .mage-image {
-    width: 300px;
-    height: 300px;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
     margin: 20px auto;
-    border-radius: 50%;
+    border-radius: 15px; /* Bordures arrondies au lieu de rond complet */
     border: 3px solid #9333EA;
     box-shadow: 0 0 30px rgba(147, 51, 234, 0.6);
+    display: block;
 }
 
 .mage-image-small {
-    width: 150px;
-    height: 150px;
+    max-width: 200px;
+    width: 100%;
+    height: auto;
     margin: 20px auto;
-    border-radius: 50%;
+    border-radius: 15px; /* Bordures arrondies au lieu de rond complet */
     border: 3px solid #9333EA;
     box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+    display: block;
 }
 
 /* ===== QUESTIONS ===== */
